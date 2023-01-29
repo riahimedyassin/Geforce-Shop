@@ -24,10 +24,20 @@
 body {
     font-family: 'Poppins';
     height: 5000px;
-    margin: 0;
-    
+    margin: 0;   
 }
+::-webkit-scrollbar {
+    width: 10px;
+    color: green;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--mainColor);
+    border-radius: 10px;
+  }
 /*header*/ 
+.account {
+    cursor: pointer;
+}
 header {
     position: sticky;
     top: 0;
@@ -36,6 +46,7 @@ header {
     color: white;
     padding: 5px;
     z-index: 50;
+    box-shadow: 0px 2px 15px 2px rgba(0, 0, 0, 0.496);
    
 }
 .icon + h3 {
@@ -89,7 +100,7 @@ header .header-elemnts div:hover , .icon {
 nav {
     height: 60px;
     background-image: linear-gradient(20deg,var(--mainColor),var(--secondColor));
-    box-shadow: 0px 2px 10px 1px var(--shadow);
+    box-shadow: 0px 5px 15px 2px black;
     margin: 0;
 }
 main {
@@ -150,9 +161,32 @@ nav h3 {
     -o-border-radius: 50%;
     position: absolute;
     bottom: 20px;
-    left: 30px;
+    left: 20px;
     z-index: 1;
     font-family: 'Poppins';
+}
+.added-item {
+    height: 80%;
+    overflow: scroll;
+}
+.check-out {
+    border:1px solid var(--mainColor);
+    background-color: transparent;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    font-family: 'Poppins';
+    color: var(--mainColor);
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    transition: 0.2s;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -ms-transition: 0.2s;
+    -o-transition: 0.2s;
 }
 /*End Nav Side*/
 /*Scroll Up button*/
@@ -168,13 +202,13 @@ nav h3 {
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
-    bottom: 40px;
+    bottom: 60px;
     right:20px;
     box-shadow: 0px 0px 10px 1px var(--mainBlack);
 }
 /*First section */ 
 .recommended  {
-    margin: 150px;
+    margin: 12vw;
 }
 .decouvrir {
     width: 40%;
@@ -194,7 +228,7 @@ nav h3 {
     
 }
 .decouvrir h3 {
-    margin-bottom: 8%;
+    margin-bottom: 10%;
 }
 .rec {
     width: 60%;
@@ -221,7 +255,7 @@ h2 , h3 , p {
     -ms-border-radius: 8px;
     -o-border-radius: 8px;
     padding: 0px;
-    margin-bottom: 8%;
+    margin-bottom: 15%;
     margin-left: 2%;
     overflow: hidden;
     border: 1px solid white;
@@ -233,29 +267,28 @@ h2 , h3 , p {
     font-size: 15px;
     margin-top: 10%;
 }
-@media screen and (max-width:1200px) {
-    .recommended {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin:50px
-    }
-    .rec, .decouvrir{
-        width: 100%;
-    }
-}
+
 @media screen and (max-width:990px) {
+    #account2 {
+        display: none;
+    }
     .com-container {
-        flex-direction: column;
+        
+        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
+        
     }
     .rec, .decouvrir{
         width: 100%;
     }
     .comp  {
-        width: 100%;
+        width: 48%;
     }
+    .item-card {
+        width: 150%;
+    }
+    
 }
 .separt {
     height: 2px;
@@ -272,7 +305,7 @@ h2 , h3 , p {
     width: 20vw;
 }
 .sep2 {
-    width:30vw
+    width:20vw
 }
 .item-card {
     width: 30%;
@@ -353,7 +386,7 @@ h2 , h3 , p {
     margin-top: -60px;
     margin-bottom: 50px;
 }
-.add-to-cart {
+.add-to-cart-heart {
     position: absolute;
     top:0px;
     right: 0px;
@@ -385,9 +418,8 @@ h2 , h3 , p {
 }
 .item-card:hover img:not(.icon) {
     filter: blur(1px);
-    -webkit-filter: blur(1px);
 }
-.item-card:hover .add-to-cart {
+.item-card:hover .add-to-cart-heart {
     transform: translateY(0px);
     -webkit-transform: translateY(0px);
     -moz-transform: translateY(0px);
@@ -423,9 +455,9 @@ h2 , h3 , p {
     position: relative;
 }
 .panier-list {
+    border:2px solid var(--thirdColor);
     width: 400px;
     min-height: 500px;
-    border: 1px solid black;
     border-radius: 8px;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
@@ -441,6 +473,9 @@ h2 , h3 , p {
     right: 30px;
     z-index: 80;
     top: 50px;
+    box-shadow: 0px 2px 15px 2px rgba(0, 0, 0, 0.459);
+    height: 80%;
+    overflow-y: scroll;
 }
 .showList {
     transform: rotateY(0deg);
@@ -458,5 +493,171 @@ h2 , h3 , p {
     position: absolute;
     top:10px;
     right:10px;
-    animation-duration: ;
+}
+.toggle-header {
+    display: none;
+}
+.displayHeader {
+    display:block;
+    transform:rotateY(0deg);
+    -webkit-transform:rotateY(0deg);
+    -moz-transform:rotateY(0deg);
+    -ms-transform:rotateY(0deg);
+    -o-transform:rotateY(0deg);
+}
+.displayHeaderElements {
+    display:flex;flex-direction:column
+}
+@media screen and (max-width:990px) {
+    .rec {
+        min-height: 1100px;
+    }
+    .item-card {
+        width: 70%;
+    }
+    .panier-list {
+        width: 80vw;
+    }
+    .logo {
+        justify-self: center;
+        align-self: center;
+    }
+    .toggle-header {
+        display: block;
+    }
+    .all-products-list {
+        width:60vw;
+        margin: 0;
+    }
+}
+@media screen and (max-width:1200px) {
+    header {
+        display: none;
+        transform: rotateY(90deg);
+        -webkit-transform: rotateY(90deg);
+        -moz-transform: rotateY(90deg);
+        -ms-transform: rotateY(90deg);
+        -o-transform: rotateY(90deg);
+    }
+    .nav-search ,.account{
+        display: none;
+    }
+
+    .recommended {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin:50px
+    }
+    .rec, .decouvrir{
+        width: 100%;
+        transform: translateY(80px);
+        -webkit-transform: translateY(80px);
+        -moz-transform: translateY(80px);
+        -ms-transform: translateY(80px);
+        -o-transform: translateY(80px);
+    }
+    .all-rec {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .toggle-header {
+        display: block;
+    }
+}
+/*PRODUCTS CARD */ 
+
+.add-btn {
+    border:1px solid var(--mainColor);
+    background-color: transparent;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    font-family: 'Poppins';
+    color: var(--mainColor);
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    transition: 0.2s;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -ms-transition: 0.2s;
+    -o-transition: 0.2s;
+}
+.add-btn:hover {
+    border: 1px solid white;
+    background-color: var(--mainColor);
+    color: white;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.404);
+}
+.products {
+    margin: 200px 180px;
+    position: relative;
+    overflow: hidden;
+}
+
+.circle {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-image: linear-gradient(20deg,var(--mainColor),var(--thirdColor));
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    top: -150px;
+    left:-100px;
+    z-index: -1;
+}
+.product-card {
+    width:30%;
+    height: 400px;
+    background-color: white;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid var(--mainColor);
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    z-index: 10;
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.308);
+    padding: 5px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+.product-card h4 {
+    margin-bottom: 40px;
+    text-shadow: 0px 0px 5px rgba(255, 0, 0, 0.364);
+    color: red;
+}
+.product-image {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 30px;
+    filter: drop-shadow(0px 0px 10px var(--mainColor));
+    -webkit-filter: drop-shadow(0px 0px 10px var(--mainColor));
+}
+@media screen and (max-width:1200px) {
+    .product-card {
+        width: 45%;
+        margin: 2%;
+    }
+    .products {
+        margin:200px 80px
+    }
+}
+@media screen and (max-width:800px) {
+    .products {
+        margin:200px 80px
+    }
+    .product-card {
+        width: 80%;
+        
+    }
 }
