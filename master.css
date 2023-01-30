@@ -301,6 +301,19 @@ h2 , h3 , p {
     margin-top: 150px;
     margin-bottom: -100px;
 }
+.separator a {
+    color: gray;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: 0.2s;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -ms-transition: 0.2s;
+    -o-transition: 0.2s;
+}
+.separator a:hover {
+    color: black;
+}
 .sep1 {
     width: 20vw;
 }
