@@ -88,6 +88,7 @@ body {
     box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.534);
 }
 .sign-up {
+    transition: 0.5s;
     background-image: linear-gradient(-20deg,var(--mainColor),var(--thirdColor));
     color: white;
     display: flex;
@@ -99,6 +100,11 @@ body {
     -ms-transition: 0.5s;
     -o-transition: 0.5s;
     z-index:20;
+    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    -o-transform: translateY(0px);
 }
 .sign-up , .sign-in {
     padding: 50px;
@@ -222,4 +228,65 @@ input , button , a {
     .circle-container +div h1 {
         color: white;
     }
+}
+.moveSignIn{
+    transition: 0.5s;
+    transform: translateY(200px);
+    -webkit-transform: translateY(200px);
+    -moz-transform: translateY(200px);
+    -ms-transform: translateY(200px);
+    -o-transform: translateY(200px);
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+footer {
+    width: 100%;
+    min-height: 200px;
+    margin-top: 100px;
+    background-image: linear-gradient(20deg,var(--mainColor),var(--secondColor));
+}
+.logo-footer {
+    width: 40%;
+    color: white;
+    font-family: 'Space';
+}
+.icon {
+    width: var(--iconSize);
+    height: var(--iconSize);
+    filter: invert();
+    -webkit-filter: invert();
+    cursor: pointer;
+}
+.icon-sm {
+    width: var(--iconSize);
+    height: var(--iconSize);
+    cursor: pointer;
+}
+.info-footer {
+    width: 30%;
+    color: white;
+    font-family: 'Poppins';
+    text-align: center;
+    margin-top: 40px;
+}
+.contact-footer {
+    width: 30%;
+    color: white;
+}
+.contact-footer-sm p {
+    display: inline;
+}
+.contact-footer-sm {
+    margin: 15px;
+}
+@media screen and (max-width:1200px) {
+    footer {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 290px;
+    }
+
 }
