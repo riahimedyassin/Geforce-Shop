@@ -42,15 +42,17 @@ toggleList('panier', 'panier-list')
 //SCROLL TO UP VISIBILITY
 window.addEventListener("scroll", e => {
     if (window.scrollY > 500) {
-        myUp.style.cssText = "visibility: visible;transition: 0.2s;"
+        myUp.style.cssText = "visibility: visible;transition: 0.2s;";
     }
     else {
         myUp.style.cssText = "visibility: hidden;"
+        myUp.classList.remove("flipToUp")
     }
 })
 //SCROLL TO TOP BUTTON
 let myUp = document.querySelector(".toUp");
 myUp.addEventListener("click", e => {
+    myUp.classList.add("flipToUp")
     window.scrollTo({
         top: 0,
         behavior: "smooth"
@@ -176,4 +178,11 @@ let myBurger = document.querySelector(".toggle-header");
 myBurger.addEventListener("click", e => {
     document.querySelector("header").classList.toggle("displayHeader")
     document.querySelector(".header-elemnts").classList.toggle("displayHeaderElements")
+})
+//PROMO CARD SHOW
+let myPromoCard=document.querySelectorAll(".promo-card"); 
+myPromoCard.forEach(el=> {
+    el.addEventListener("click" ,e=> {
+        el.classList.toggle("showPromo")
+    })
 })

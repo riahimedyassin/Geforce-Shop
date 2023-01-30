@@ -194,7 +194,7 @@ nav h3 {
     visibility: hidden;
     width: 50px;
     height: 50px;
-    background-color: var(--secondColor);
+    background-image: linear-gradient(-20deg,var(--mainColor),var(--secondColor));
     position: fixed;
     z-index: 2;
     border-radius: 50%;
@@ -204,7 +204,14 @@ nav h3 {
     -o-border-radius: 50%;
     bottom: 60px;
     right:20px;
-    box-shadow: 0px 0px 10px 1px var(--mainBlack);
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.622);
+}
+.flipToUp {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
 }
 /*First section */ 
 .recommended  {
@@ -672,5 +679,95 @@ h2 , h3 , p {
     .product-card {
         width: 80%;
         
+    }
+}
+
+/* PROMO CARD*/
+
+.promotion {
+    margin:200px 80px;
+    flex-wrap: wrap;
+    position: relative;
+}
+.promo-card {
+    transition: 0.5s;
+    width:30%;
+    height: 270px;
+    background-image: linear-gradient(20deg,var(--mainColor),var(--thirdColor));
+    animation-iteration-count: infinite;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.474);
+    margin: 50px;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    overflow: hidden;
+    border: 1px solid white;
+    overflow: hidden;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    cursor: pointer;
+}
+.promo-card img {
+    width: 40%;
+    filter: drop-shadow(0px 0px 10px black);
+    -webkit-filter: drop-shadow(0px 0px 10px black);
+}
+
+.promo-card div {
+
+    width: 100%;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    background-image: linear-gradient(20deg,var(--mainColor),var(--thirdColor));
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.346);
+    border: 2px solid var(--mainColor);
+}
+table  {
+    margin :20px;
+    font-size: 18px;
+}
+table tr th {
+    margin-bottom: 20px;
+    padding-right: 20px;
+}
+.showPromo {
+    height:500px;
+}
+.promo-card button {
+    border:2px solid var(--mainColor);
+    background-color: white;
+    color: var(--mainColor);
+    width: 200px;
+    height: 50px;
+    font-family: 'Poppins';
+    transition: 0.2s;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -ms-transition: 0.2s;
+    -o-transition: 0.2s;
+    font-weight: bold;
+}
+.promo-card button:hover {
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.245);
+    animation: border-rotate;
+    -webkit-animation: border-rotate;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+}
+@media screen and (max-width:800px) {
+    .promo-card {
+        width: 100vw;
+        margin: 0;
+        margin-bottom: 20px;
     }
 }
