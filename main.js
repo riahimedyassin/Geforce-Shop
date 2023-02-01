@@ -1,4 +1,5 @@
 //CHECK IF LOCAL STORAGE HAVE EXISTING ELEMENTS OR NOT & SHOW ELEMENTS//
+
 let myLocalArray = [];
 
 if (localStorage.shopList) {
@@ -75,11 +76,13 @@ let myItem = {
     name: "",
     id: "",
     image: "",
-    price: ""
+    price: "",
+    mark:"",
+    type:"",
 }
 //ADD TO LOCAL STORAGE
 function addToLocal(item) {
-    let myLocalArray = JSON.parse(localStorage.shopList);
+    let myLocalArray = JSON.parse(localStorage.shopList)
     myLocalArray.push(item);
     console.log(myLocalArray)
     localStorage.shopList = JSON.stringify(myLocalArray);
@@ -153,10 +156,11 @@ let addButton = document.querySelectorAll(".add-to-cart");
 addButton.forEach(el => {
     el.addEventListener("click", e => {
         let myNewItem = myItem;
-        myNewItem.name = el.parentElement.children[1].children[0].innerHTML;
-        myNewItem.id = el.parentElement.children[1].getAttribute("data-product");
-        myNewItem.image = el.parentElement.children[0].getAttribute("src");
-        myNewItem.price = el.parentElement.children[1].getAttribute("data-price")
+        myNewItem.name = el.parentElement.getAttribute("data-name");
+        myNewItem.id = el.parentElement.getAttribute("data-product");
+        myNewItem.image = el.parentElement.getAttribute("data-image");
+        myNewItem.price = el.parentElement.getAttribute("data-price"); 
+        console.log(myNewItem)
         addToLocal(myNewItem);
     })
 })

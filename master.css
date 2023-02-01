@@ -688,11 +688,12 @@ h2 , h3 , p {
     margin:200px 80px;
     flex-wrap: wrap;
     position: relative;
+    height: 300px;
 }
 .promo-card {
     transition: 0.5s;
     width:30%;
-    height: 270px;
+    height: 20%;
     background-image: linear-gradient(20deg,var(--mainColor),var(--thirdColor));
     animation-iteration-count: infinite;
     border-radius: 10px;
@@ -720,7 +721,7 @@ h2 , h3 , p {
     -webkit-filter: drop-shadow(0px 0px 10px black);
 }
 
-.promo-card div {
+.promo-card h1 {
 
     width: 100%;
     border-radius: 8px;
@@ -743,7 +744,7 @@ table tr th {
 .showPromo {
     height:500px;
 }
-.promo-card button {
+.promo-card button , .gift-card button {
     border:2px solid var(--mainColor);
     background-color: white;
     color: var(--mainColor);
@@ -757,8 +758,8 @@ table tr th {
     -o-transition: 0.2s;
     font-weight: bold;
 }
-.promo-card button:hover {
-    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.245);
+.promo-card button:hover, .gift-card button:hover {
+    box-shadow: 0px 0px 10px  rgba(0, 0, 0, 0.245);
     animation: border-rotate;
     -webkit-animation: border-rotate;
     animation-iteration-count: infinite;
@@ -770,4 +771,27 @@ table tr th {
         margin: 0;
         margin-bottom: 20px;
     }
+}
+.gifts {
+    display: flex;
+    margin: 200px 150px;
+    
+}
+.gift-card {
+
+background: rgba(0, 213, 63,0.8);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.411);
+
+width: 30%;
+height: 400px;
+padding: 0px;
+color: white;
+border: 5px solid white;
+}
+.gift-card img {
+    width: 80%;
+}
+.gift-card h1 {
+    font-size: 1.5rem;
 }
