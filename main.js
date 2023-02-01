@@ -160,6 +160,10 @@ addButton.forEach(el => {
         myNewItem.id = el.parentElement.getAttribute("data-product");
         myNewItem.image = el.parentElement.getAttribute("data-image");
         myNewItem.price = el.parentElement.getAttribute("data-price"); 
+        document.querySelector(".clean").parentElement.style.cssText="display:block"
+        setInterval(e=> {
+            document.querySelector(".clean").parentElement.style.cssText="display:none"
+        },2000)
         console.log(myNewItem)
         addToLocal(myNewItem);
     })
@@ -170,7 +174,11 @@ function removeItemShop() {
     myDeleteItem.forEach(el => {
         el.addEventListener("click", e => {
             let myFdeleteItem = el.parentElement.children[1].children[0].children[1].innerHTML;
-            console.log("test")
+            console.log("test");
+            document.querySelector(".warning").parentElement.style.cssText="display:block"
+            setInterval(e=> {
+            document.querySelector(".warning").parentElement.style.cssText="display:none"
+            },2000)
             removeFromLocal(myFdeleteItem);
             el.parentElement.remove()
         })
